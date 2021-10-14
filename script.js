@@ -39,6 +39,10 @@ function getNewPassLength() {
   return passLength;
 }
 
+function getNewPassCharacterTypes() {
+  var isLowerCase, isUpperCase, isNumeric, isSpecialCharacter;
+}
+
 /*Added Code*/
 /*create a function addEventListener to handle when the user clicks generate button//
   //if(user clicks generate button)
