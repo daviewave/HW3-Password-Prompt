@@ -10,44 +10,21 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", getNewPassLength, writePassword);
+generateBtn.addEventListener("click", getCriteria, writePassword);
 
-// Get the Users desired length of their new password
-function getNewPassLength() {
+function getCriteria() {
+  /*1. Prompt user for new password length and make sure choice is within char limit*/
   var passLength = prompt(
-    "ENTER A NUMBER BETWEEEN 8-128 TO BE THE NEW LENGTH OF YOUR PASSWORD:",
-    "length"
+    "ENTER A NUMBER BETWEEEN 8-128 TO BE THE NEW LENGTH OF YOUR PASSWORD:"
   );
-
   if (passLength < 8 || passLength > 128) {
-    if (passLength < 8) {
-      alert(
-        "ERROR: " +
-          passLength +
-          " CHARACHTER'S IS LESS THAN THE MINIMUM LENGTH ALLOWED FOR NEW PASSWORD"
-      );
-    } else if (passLength > 128) {
-      alert(
-        "ERROR: " +
-          passLength +
-          " CHARACHTER'S IS MORE THAN THE MAXIMUM LENGTH ALLOWED FOR NEW PASSWORD"
-      );
-    }
-    /*Actually have no idea why this code would return false even when passLength console.logged an int value...
-      // else if (!Number.isInteger(passLength)) {
-      // alert("ERROR: MUST ENTER NUMERIC VALUE");
-      // }
-    */
-    getNewPassLength();
-  } else {
-    return passLength;
+    alert(
+      "ERROR: " +
+        passLength +
+        " IS OUT OF THE ALLOWED PASSWORD LENGTH RANGE OF 8-128 "
+    );
+    getCriteria();
   }
-}
-
-function getNewPassCharacterTypes() {
-  // isUpperCase,
-  // isNumeric,
-  // isSpecialCharacter;
 }
 
 /*Added Code*/
