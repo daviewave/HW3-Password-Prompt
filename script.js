@@ -10,7 +10,7 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", promptPassLength, writePassword);
+generateBtn.addEventListener("click", getNewPassLength, writePassword);
 
 // Get the Users desired length of their new password
 function getNewPassLength() {
@@ -18,6 +18,7 @@ function getNewPassLength() {
     "Enter A Number Between 8-128 to be the New Length of Your Password",
     "length"
   );
+
   if (passLength < 8 || passLength > 128) {
     if (passLength < 8) {
       alert(
@@ -25,22 +26,23 @@ function getNewPassLength() {
           passLength +
           " CHARACHTER'S IS LESS THAN THE MINIMUM LENGTH ALLOWED FOR NEW PASSWORD"
       );
-      promptPassLength();
     } else {
       alert(
         "ERROR: " +
           passLength +
           " CHARACHTER'S IS MORE THAN THE MAXIMUM LENGTH ALLOWED FOR NEW PASSWORD"
       );
-      promptPassLength();
     }
+    getNewPassLength();
+  } else {
+    return passLength;
   }
-
-  return passLength;
 }
 
 function getNewPassCharacterTypes() {
-  var isLowerCase, isUpperCase, isNumeric, isSpecialCharacter;
+  // isUpperCase,
+  // isNumeric,
+  // isSpecialCharacter;
 }
 
 /*Added Code*/
