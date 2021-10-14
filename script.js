@@ -10,7 +10,15 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", promptPassLength, writePassword);
+
+// Get the Users desired length of their new password
+function promptPassLength() {
+  var passLength = prompt(
+    "Enter A Number Between 8-128 to be the New Length of Your Password",
+    "length"
+  );
+}
 
 /*Added Code*/
 /*create a function addEventListener to handle when the user clicks generate button//
