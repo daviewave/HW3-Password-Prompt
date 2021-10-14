@@ -10,9 +10,9 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", getCriteria, writePassword);
+generateBtn.addEventListener("click", generatePassword, writePassword);
 
-function getCriteria() {
+function generatePassword() {
   /*1. Prompt user for new password length and make sure choice is within char limit*/
   var passLength = prompt(
     "ENTER A NUMBER BETWEEEN 8-128 TO BE THE NEW LENGTH OF YOUR PASSWORD:"
@@ -23,7 +23,7 @@ function getCriteria() {
         passLength +
         " IS OUT OF THE ALLOWED PASSWORD LENGTH RANGE OF 8-128 "
     );
-    getCriteria();
+    generatePassword();
   }
 
   /*2. Prompt the user with the different character types that could be included in the new password*/
