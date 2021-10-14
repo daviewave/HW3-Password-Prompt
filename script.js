@@ -13,7 +13,7 @@ function writePassword() {
 generateBtn.addEventListener("click", promptPassLength, writePassword);
 
 // Get the Users desired length of their new password
-function promptPassLength() {
+function getNewPassLength() {
   var passLength = prompt(
     "Enter A Number Between 8-128 to be the New Length of Your Password",
     "length"
