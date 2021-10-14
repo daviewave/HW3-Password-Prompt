@@ -19,19 +19,21 @@ function getNewPassLength() {
     "length"
   );
 
-  if (passLength < 8 || passLength > 128) {
+  if (passLength < 8 || passLength > 128 || !Number.isInteger(passLength)) {
     if (passLength < 8) {
       alert(
         "ERROR: " +
           passLength +
           " CHARACHTER'S IS LESS THAN THE MINIMUM LENGTH ALLOWED FOR NEW PASSWORD"
       );
-    } else {
+    } else if (passLength > 128) {
       alert(
         "ERROR: " +
           passLength +
           " CHARACHTER'S IS MORE THAN THE MAXIMUM LENGTH ALLOWED FOR NEW PASSWORD"
       );
+    } else {
+      alert("ERROR: MUST ENTER NUMERIC VALUE");
     }
     getNewPassLength();
   } else {
