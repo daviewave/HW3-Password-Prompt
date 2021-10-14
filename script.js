@@ -28,21 +28,29 @@ function getCriteria() {
 
   /*2. Prompt the user with the different character types that could be included in the new password*/
   //lowercase prompt
-  var isLowerCase = confirm(
-    "WOULD YOU LIKE LOWERCASE CHARACTERS TO BE USED IN YOUR NEW PASSWORD?"
-  );
-  //uppercase prompt
-  var isUpperCase = confirm(
-    "WOULD YOU LIKE UPPERCASE CHARACTERS TO BE USED IN YOUR NEW PASSWORD?"
-  );
-  //numerical prompt
-  var isNumerical = confirm(
-    "WOULD YOU LIKE NUMERICAL CHARACTERS TO BE USED IN YOUR NEW PASSWORD?"
-  );
-  //special character prompt
-  var isSpecialCharacter = confirm(
-    "WOULD YOU LIKE SPECIAL CHARACTERS TO BE USED IN YOUR NEW PASSWORD?"
-  );
+  do {
+    var isLowerCase = confirm(
+      "WOULD YOU LIKE LOWERCASE CHARACTERS TO BE USED IN YOUR NEW PASSWORD?"
+    );
+    //uppercase prompt
+    var isUpperCase = confirm(
+      "WOULD YOU LIKE UPPERCASE CHARACTERS TO BE USED IN YOUR NEW PASSWORD?"
+    );
+    //numerical prompt
+    var isNumerical = confirm(
+      "WOULD YOU LIKE NUMERICAL CHARACTERS TO BE USED IN YOUR NEW PASSWORD?"
+    );
+    //special character prompt
+    var isSpecialCharacter = confirm(
+      "WOULD YOU LIKE SPECIAL CHARACTERS TO BE USED IN YOUR NEW PASSWORD?"
+    );
+    //Make at least 1 character type was selected
+    if (!isLowerCase && !isUpperCase && !isNumerical && !isSpecialCharacter) {
+      alert("ERROR: MUST SELECT AT LEAST ONE CHARACTER TYPE");
+    }
+  } while (!isLowerCase && !isUpperCase && !isNumerical && !isSpecialCharacter);
+
+  /*3. */
 }
 
 /*Added Code*/
