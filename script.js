@@ -4,13 +4,14 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
+  console.log(password);
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", generatePassword, writePassword);
+generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
   /*1. Prompt user for new password length and make sure choice is within char limit*/
@@ -178,6 +179,7 @@ function generatePassword() {
   }
 
   var newPassword = newPasswordArray.join("");
+  console.log(newPassword);
   return newPassword;
 }
 
