@@ -19,7 +19,7 @@ function getNewPassLength() {
     "length"
   );
 
-  if (passLength < 8 || passLength > 128 || !Number.isInteger(passLength)) {
+  if (passLength < 8 || passLength > 128) {
     if (passLength < 8) {
       alert(
         "ERROR: " +
@@ -32,9 +32,12 @@ function getNewPassLength() {
           passLength +
           " CHARACHTER'S IS MORE THAN THE MAXIMUM LENGTH ALLOWED FOR NEW PASSWORD"
       );
-    } else {
-      alert("ERROR: MUST ENTER NUMERIC VALUE");
     }
+    /*Actually have no idea why this code would return false even when passLength console.logged an int value...
+      // else if (!Number.isInteger(passLength)) {
+      // alert("ERROR: MUST ENTER NUMERIC VALUE");
+      // }
+    */
     getNewPassLength();
   } else {
     return passLength;
