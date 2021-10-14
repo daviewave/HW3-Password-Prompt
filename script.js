@@ -178,7 +178,7 @@ function getCriteria() {
   }
 
   var newPassword = newPasswordArray.join("");
-  console.log(newPassword);
+  return newPassword;
 }
 
 /*Added Code*/
