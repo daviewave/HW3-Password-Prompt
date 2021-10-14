@@ -163,7 +163,7 @@ function getCriteria() {
   };
 
   //NEED EMPTY ARRAY TO STORE NEW PASSWORD
-  var newPassword = [];
+  var newPasswordArray = [];
 
   //1st for loop continues until the password is the length specified earlier by the user chooses a random number 0-3 which will be the index of 1/4 char types
   //2nd for loop chooses a random number 0-length of the array which will be the element selected for the current spot creating the new password
@@ -174,7 +174,8 @@ function getCriteria() {
     randomCharacter = getRandomInt(-1, chooseCharType.length);
     var chosenChar = chooseCharType[randomCharacter];
 
-    newPassword[i] = chosenChar;
+    newPasswordArray[i] = chosenChar;
+
     console.log(newPassword);
   }
 }
