@@ -25,6 +25,24 @@ function getCriteria() {
     );
     getCriteria();
   }
+
+  /*2. Prompt the user with the different character types that could be included in the new password*/
+  //lowercase prompt
+  var isLowerCase = confirm(
+    "WOULD YOU LIKE LOWERCASE CHARACTERS TO BE USED IN YOUR NEW PASSWORD?"
+  );
+  //uppercase prompt
+  var isUpperCase = confirm(
+    "WOULD YOU LIKE UPPERCASE CHARACTERS TO BE USED IN YOUR NEW PASSWORD?"
+  );
+  //numerical prompt
+  var isNumerical = confirm(
+    "WOULD YOU LIKE NUMERICAL CHARACTERS TO BE USED IN YOUR NEW PASSWORD?"
+  );
+  //special character prompt
+  var isSpecialCharacter = confirm(
+    "WOULD YOU LIKE SPECIAL CHARACTERS TO BE USED IN YOUR NEW PASSWORD?"
+  );
 }
 
 /*Added Code*/
