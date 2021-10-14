@@ -18,6 +18,25 @@ function promptPassLength() {
     "Enter A Number Between 8-128 to be the New Length of Your Password",
     "length"
   );
+  if (passLength < 8 || passLength > 128) {
+    if (passLength < 8) {
+      alert(
+        "ERROR: " +
+          passLength +
+          " CHARACHTER'S IS LESS THAN THE MINIMUM LENGTH ALLOWED FOR NEW PASSWORD"
+      );
+      promptPassLength();
+    } else {
+      alert(
+        "ERROR: " +
+          passLength +
+          " CHARACHTER'S IS MORE THAN THE MAXIMUM LENGTH ALLOWED FOR NEW PASSWORD"
+      );
+      promptPassLength();
+    }
+  }
+
+  return passLength;
 }
 
 /*Added Code*/
