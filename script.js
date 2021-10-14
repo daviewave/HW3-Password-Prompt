@@ -175,9 +175,10 @@ function getCriteria() {
     var chosenChar = chooseCharType[randomCharacter];
 
     newPasswordArray[i] = chosenChar;
-
-    console.log(newPassword);
   }
+
+  var newPassword = newPasswordArray.join("");
+  console.log(newPassword);
 }
 
 /*Added Code*/
