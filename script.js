@@ -4,7 +4,6 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  console.log(password);
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
@@ -148,12 +147,23 @@ function generatePassword() {
     "*",
   ];
   const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  const characterTypes = [
-    lowerAlphabet,
-    upperAlphabet,
-    specialCharacter,
-    numbers,
-  ];
+
+  var counter = 0;
+  var characterTypes = [];
+  if (isLowerCase) {
+    characterTypes.push(lowerAlphabet);
+  }
+  if (isUpperCase) {
+    characterTypes.push(upperAlphabet);
+  }
+  if (isSpecialCharacter) {
+    characterTypes.push(specialCharacter);
+  }
+  if (isNumerical) {
+    characterTypes.push(numbers);
+  }
+
+  console.log(characterTypes);
 
   var randomCharacterType, randomCharacter;
 
@@ -169,8 +179,12 @@ function generatePassword() {
   //1st for loop continues until the password is the length specified earlier by the user chooses a random number 0-3 which will be the index of 1/4 char types
   //2nd for loop chooses a random number 0-length of the array which will be the element selected for the current spot creating the new password
   for (var i = 0; i < passLength; i++) {
-    randomCharacterType = getRandomInt(-1, 4);
+    randomCharacterType = getRandomInt(-1, characterTypes.length + 1);
     var chooseCharType = characterTypes[randomCharacterType];
+
+    // console.log(chooseCharType);
+
+    var lengthy = chooseCharType.length;
 
     randomCharacter = getRandomInt(-1, chooseCharType.length);
     var chosenChar = chooseCharType[randomCharacter];
@@ -179,7 +193,6 @@ function generatePassword() {
   }
 
   var newPassword = newPasswordArray.join("");
-  console.log(newPassword);
   return newPassword;
 }
 
