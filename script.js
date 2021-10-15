@@ -106,32 +106,6 @@ function generatePassword() {
     "X",
     "Y",
     "Z",
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
   ];
   const specialCharacter = [
     ".",
@@ -163,10 +137,7 @@ function generatePassword() {
     characterTypes.push(numbers);
   }
 
-  console.log(characterTypes);
-
   var randomCharacterType, randomCharacter;
-
   var getRandomInt = function (max, min) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -179,7 +150,7 @@ function generatePassword() {
   //1st for loop continues until the password is the length specified earlier by the user chooses a random number 0-3 which will be the index of 1/4 char types
   //2nd for loop chooses a random number 0-length of the array which will be the element selected for the current spot creating the new password
   for (var i = 0; i < passLength; i++) {
-    randomCharacterType = getRandomInt(-1, characterTypes.length + 1);
+    randomCharacterType = getRandomInt(-1, characterTypes.length);
     var chooseCharType = characterTypes[randomCharacterType];
 
     // console.log(chooseCharType);
